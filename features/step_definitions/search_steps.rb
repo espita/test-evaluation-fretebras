@@ -27,5 +27,7 @@ end
 
 
 Then('Assert the product in ads') do  
-  expect(page).to have_content('Minha conta')
+  @title = ItemPage.new 
+  @title.wait_until_title_item_visible(wait: 10)
+  expect(@title).to have_title_item
 end
